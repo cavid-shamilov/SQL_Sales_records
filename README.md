@@ -27,7 +27,8 @@ Total sale amount
 Each row represents a single sales transaction.
 
 Database Setup and Table Creation
-```sqlCreate database
+```sql
+Create database
 CREATE DATABASE sql_project_1;
 
 -- Table creation
@@ -44,7 +45,8 @@ CREATE TABLE Salesrecords
     price_per_unit DECIMAL(10,2),
     cogs DECIMAL(10,2),
     total_sale DECIMAL(10,2)
-);```sql
+);
+```
 Data Exploration and Cleaning
 ```sql-- View first 10 rows to understand the structure
 SELECT TOP 10 * FROM Salesrecords;
