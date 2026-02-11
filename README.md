@@ -90,7 +90,6 @@ SELECT COUNT(total_sale) FROM Salesrecords;
 
 -- View all distinct categories
 SELECT DISTINCT category FROM Salesrecords;
--- Data Analysis & Business Key Problems & Answers
 ```
 
 ## My Analysis & Findings
