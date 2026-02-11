@@ -1,5 +1,5 @@
-PROJECT PORTFOLIO – Sales Records SQL Data Analysis
-Project Overview
+#**PROJECT PORTFOLIO – Sales Records SQL Data Analysis**
+##Project Overview
 
 This project demonstrates practical SQL skills applied to a structured sales transactions dataset. The analysis includes database creation, table design, data cleaning, exploratory data analysis (EDA), and solving business-driven SQL questions.
 
