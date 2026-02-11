@@ -47,7 +47,7 @@ CREATE TABLE Salesrecords
     total_sale DECIMAL(10,2)
 );
 ```
-Data Exploration and Cleaning
+## Data Exploration and Cleaning
 ```sql-- View first 10 rows to understand the structure
 SELECT TOP 10 * FROM Salesrecords;
 
@@ -90,9 +90,10 @@ SELECT COUNT(total_sale) FROM Salesrecords;
 
 -- View all distinct categories
 SELECT DISTINCT category FROM Salesrecords;
--- Data Analysis & Business Key Problems & Answers```sql
+-- Data Analysis & Business Key Problems & Answers
+```
 
-My Analysis & Findings
+## My Analysis & Findings
 Q.1 Retrieve all sales made on '2022-09-19
 Q.2 Transactions where category is 'Electronics' and quantity > 2 in Feb 2023:
 Q.3 Total sales for each category
@@ -105,73 +106,82 @@ Q.9 Write a SQL query to find the number of unique customers who purchased items
 
 
 
-Q.1 Retrieve all sales made on '2022-09-19
+## Q.1 Retrieve all sales made on '2022-09-19
 ```sql SELECT * 
 FROM Salesrecords 
-WHERE sale_date = '2022-09-19';```sql
+WHERE sale_date = '2022-09-19';
+```
 
 
 
-Q.2 Transactions where category is 'Electronics' and quantity > 2 in Feb 2023:
+## Q.2 Transactions where category is 'Electronics' and quantity > 2 in Feb 2023:
 ```sqlSELECT *
 FROM Salesrecords
 WHERE YEAR(sale_date) = 2023
   AND MONTH(sale_date) = 2
   AND category = 'Electronics'
-  AND quantity > 2;```sql
+  AND quantity > 2;
+```
 
 
 
-Q.3 Total sales for each category
+## Q.3 Total sales for each category
   ```sqlSELECT category, SUM(total_sale) 
 FROM Salesrecords 
-GROUP BY category;```sql
+GROUP BY category;
+```
 
 
-Q.4 Average age of customers who purchased from 'Beauty' category
+## Q.4 Average age of customers who purchased from 'Beauty' category
 ```sqlSELECT category, AVG(age) 
 FROM Salesrecords 
-WHERE category = 'Beauty';```sql
+WHERE category = 'Beauty';
+```
 
 
 
-Q.5Transactions where total_sale > 1000
+## Q.5Transactions where total_sale > 1000
 ```sqlSELECT * 
 FROM Salesrecords 
-WHERE total_sale > 1000;```sql
+WHERE total_sale > 1000;
+```
 
 
-Q.6 Total number of transactions by gender in each category
+## Q.6 Total number of transactions by gender in each category
 ```sqlSELECT category, gender, COUNT(transactions_id) 
 FROM Salesrecords
-GROUP BY category, gender;```sql
+GROUP BY category, gender;
+```
 
 
 
-Q.7 Write a SQL query to calculate the average sale for each month
+## Q.7 Write a SQL query to calculate the average sale for each month
 ```sqlselect year(sale_date),datename(month,sale_date),avg(total_sale)
 from Salesrecords
 group by year(sale_date),month(sale_date),datename(month,sale_date)
-ORDER BY year(sale_date), MONTH(sale_date);```sql
+ORDER BY year(sale_date), MONTH(sale_date);
+```
 
 
 
-Q.8 Write a SQL query to find the top 5 customers based on the highest total sales
+## Q.8 Write a SQL query to find the top 5 customers based on the highest total sales
 ```sqlSelect top 5  customer_id,sum(total_sale) 
 from salesrecords 
 group by customer_id 
-order by total_sales desc;```sql
+order by total_sales desc;
+```
 
 
 
-Q.9 Write a SQL query to find the number of unique customers who purchased items from each category.
+## Q.9 Write a SQL query to find the number of unique customers who purchased items from each category.
 ```sqlselect category,count(distinct(customer_id)) 
 from salesrecords 
 group by category;
 
 
--- End of project```sql
-Key SQL Concepts Used
+-- End of project
+```
+## Key SQL Concepts Used
 
 Database & Table creation: CREATE DATABASE, CREATE TABLE
 Data Cleaning: DELETE, IS NULL
@@ -181,10 +191,10 @@ Sorting: ORDER BY
 Working with unique values: DISTINCT
 Top rows: TOP
 Date functions: YEAR(), MONTH(), DATENAME()
-Acknowledgment
+## Acknowledgment
 This project is based on tasks provided in the following YouTube SQL tutorial series:
 🔗 YouTube SQL Tutorial Series
 All query implementations, structure, and documentation were completed independently as part of my SQL learning journey.
-Conclusion
+## Conclusion
 
 This project strengthened my SQL fundamentals, improved my data cleaning skills, and developed analytical thinking by solving real-world styled business questions using structured sales data.
