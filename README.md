@@ -106,7 +106,8 @@ Q.9 Write a SQL query to find the number of unique customers who purchased items
 
 
 ## Q.1 Retrieve all sales made on '2022-09-19
-```sql SELECT * 
+```sql
+SELECT * 
 FROM Salesrecords 
 WHERE sale_date = '2022-09-19';
 ```
